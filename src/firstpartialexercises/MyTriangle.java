@@ -30,14 +30,14 @@ public class MyTriangle {
         return "MyTriangle[v1=" + v1.toString() + ",v2=" + v2.toString() + ",v3=" + v3.toString() + "]";
     }
     public double getPerimeter(){//Suma la distancia de los 3 lados
-        return v1.distance() + v2.distance() + v3.distance();
+        return this.v1.distance(v2) + this.v2.distance(v3) + this.v3.distance(v1);
     }
     public String getType(){//Checa el valor de los lados y regresa que tipo de triangulo es
         String a = "";
-        if(v1.distance() == v2. distance() && v1.distance() == v3.distance() && v2.distance() == v3.distance()){
+        if(this.v1.distance(v2) == this.v1.distance(v3) && this.v1.distance(v3) ==  this.v2.distance(v3) && this.v2.distance(v3) == this.v1.distance(v2)){
             //Si todas las distancias son iguales
             return a += "Equilatero";//Imprimira equilatero
-        } else if(v1.distance() != v2.distance() && v1.distance() != v3.distance() && v2.distance() != v3.distance()){
+        } else if(this.v1.distance(v2) != this.v1.distance(v3) && this.v1.distance(v3) !=  this.v2.distance(v3) && this.v2.distance(v3) != this.v1.distance(v2)){
             //Si todos los lados son diferentes entre si
             return a += "Escaleno";//Imprimira escaleno
         }else{//Si no
